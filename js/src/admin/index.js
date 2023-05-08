@@ -39,6 +39,11 @@ app.initializers.add('jslirola-login2seeplus', () => {
         setting: 'jslirola.login2seeplus.code',
         type: 'switch',
         label: app.translator.trans('jslirola-login2seeplus.admin.code')
+      })
+      .registerSetting({
+        setting: 'jslirola.login2seeplus.sensitive.switch',
+        type: 'switch',
+        label: app.translator.trans('jslirola-login2seeplus.admin.sensitive.switch')
       });
 });
 

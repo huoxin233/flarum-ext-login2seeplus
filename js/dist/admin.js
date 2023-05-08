@@ -52,6 +52,10 @@ flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().initializers.add('jslir
     setting: 'jslirola.login2seeplus.code',
     type: 'switch',
     label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.code')
+  }).registerSetting({
+    setting: 'jslirola.login2seeplus.sensitive.switch',
+    type: 'switch',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.switch')
   });
 });
 function createSeparator() {
