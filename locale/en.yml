@@ -5,11 +5,20 @@ jslirola-login2seeplus:
     link: Login to see the link
     image: Login to see the image
     code: Login to see the code
+    sensitive: Login to see sensitive information
   admin:
     title: Login2SeePlus
     hide: Hide
     link: Links
     image: Images
     code: Code
+    sensitive:
+      input:
+        label: Sensitive Info Input
+        help: Input text or word that you want to hide, one per line. If the content contains a string you want to hide, it will be replace by the text that is being set below.
+      replacewith:
+        label: Replace Sensitive Info With
+        help: The text that you want your sensitive info to be replace with. Use "$this->get_link('login to see')" will generate a link showing 'login to see' and will display the login pop up once click
+      switch: Sensitive Info
     post:
       title: Hide content exceeding this length (<em>-1</em> to show all.)

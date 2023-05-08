@@ -1,2 +1,170 @@
-module.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var l=t[r]={i:r,l:!1,exports:{}};return e[r].call(l.exports,l,l.exports,n),l.l=!0,l.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var l in e)n.d(r,l,function(t){return e[t]}.bind(null,l));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=7)}([function(e,t){e.exports=flarum.core.compat["common/app"]},function(e,t){e.exports=flarum.core.compat["common/extend"]},,,,,,function(e,t,n){"use strict";n.r(t);n(1);var r=n(0),l=n.n(r);l.a.initializers.add("jslirola-login2seeplus",(function(){l.a.extensionData.for("jslirola-login2seeplus").registerSetting((function(){return m("legend",{class:"login2seeplus-lenght"},l.a.translator.trans("jslirola-login2seeplus.admin.post.title"))})).registerSetting({setting:"jslirola.login2seeplus.post",type:"number",min:-1}).registerSetting((function(){return m("legend",{class:"login2seeplus-hide"},l.a.translator.trans("jslirola-login2seeplus.admin.hide"))})).registerSetting({setting:"jslirola.login2seeplus.link",type:"switch",label:l.a.translator.trans("jslirola-login2seeplus.admin.link")}).registerSetting({setting:"jslirola.login2seeplus.image",type:"switch",label:l.a.translator.trans("jslirola-login2seeplus.admin.image")}).registerSetting({setting:"jslirola.login2seeplus.code",type:"switch",label:l.a.translator.trans("jslirola-login2seeplus.admin.code")})}))}]);
+/******/ (() => { // webpackBootstrap
+/******/ 	// runtime can't be in strict mode because a global variable is assign and maybe created.
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/admin/index.js":
+/*!****************************!*\
+  !*** ./src/admin/index.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flarum/common/extend */ "flarum/common/extend");
+/* harmony import */ var flarum_common_extend__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_common_extend__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var flarum_common_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/common/app */ "flarum/common/app");
+/* harmony import */ var flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_common_app__WEBPACK_IMPORTED_MODULE_1__);
+
+
+flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().initializers.add('jslirola-login2seeplus', function () {
+  flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().extensionData["for"]('jslirola-login2seeplus').registerSetting(function () {
+    return m("legend", {
+      "class": "login2seeplus-lenght"
+    }, flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.post.title'));
+  }).registerSetting({
+    setting: 'jslirola.login2seeplus.post',
+    type: 'number',
+    min: -1
+  }).registerSetting(createSeparator).registerSetting({
+    setting: 'jslirola.login2seeplus.sensitive.input',
+    type: 'textarea',
+    rows: 10,
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.input.label'),
+    help: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.input.help')
+  }).registerSetting({
+    setting: 'jslirola.login2seeplus.sensitive.replacewith',
+    type: 'text',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.replacewith.label'),
+    help: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.replacewith.help')
+  }).registerSetting(createSeparator).registerSetting(function () {
+    return m("legend", {
+      "class": "login2seeplus-hide"
+    }, flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.hide'));
+  }).registerSetting({
+    setting: 'jslirola.login2seeplus.link',
+    type: 'switch',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.link')
+  }).registerSetting({
+    setting: 'jslirola.login2seeplus.image',
+    type: 'switch',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.image')
+  }).registerSetting({
+    setting: 'jslirola.login2seeplus.code',
+    type: 'switch',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.code')
+  });
+});
+function createSeparator() {
+  return m("div", {
+    "class": "Separator"
+  }, m("hr", null));
+}
+
+/***/ }),
+
+/***/ "flarum/common/app":
+/*!***************************************************!*\
+  !*** external "flarum.core.compat['common/app']" ***!
+  \***************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = flarum.core.compat['common/app'];
+
+/***/ }),
+
+/***/ "flarum/common/extend":
+/*!******************************************************!*\
+  !*** external "flarum.core.compat['common/extend']" ***!
+  \******************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = flarum.core.compat['common/extend'];
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!******************!*\
+  !*** ./admin.js ***!
+  \******************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_admin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/admin */ "./src/admin/index.js");
+
+})();
+
+module.exports = __webpack_exports__;
+/******/ })()
+;
 //# sourceMappingURL=admin.js.map

@@ -10,7 +10,9 @@
   },
   "devDependencies": {
     "flarum": "^1.0.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "global": "^4.4.0",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^4.13.3"
   }
 }

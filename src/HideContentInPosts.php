@@ -28,6 +28,7 @@ class HideContentInPosts extends FormatContent
             $s_post = (int)$this->settings->get('jslirola.login2seeplus.post', 100);
             $s_link = $this->settings->get('jslirola.login2seeplus.link', false);
             $s_code = $this->settings->get('jslirola.login2seeplus.code', false);
+            $s_sensitive = $this->settings->get('jslirola.login2seeplus.sensitive.switch', false);
 
             // truncate
             if ($s_post != -1 && function_exists('mb_substr') && function_exists('mb_strlen')) {
@@ -50,6 +51,15 @@ class HideContentInPosts extends FormatContent
                 $newHTML = preg_replace('/<pre><code(.*?)>[^>]*<\/pre>/is', $this->get_link('jslirola-login2seeplus.forum.code'), $newHTML);
                 $newHTML = preg_replace('/<code(.*?)>[^>]*<\/code>/is', $this->get_link('jslirola-login2seeplus.forum.code'), $newHTML);
             }
+
+            if ($s_sensitive) {
+                $userInput = $this->settings->get('jslirola.login2seeplus.sensitive.input');
+                $replaceWith = $this->settings->get('jslirola.login2seeplus.sensitive.replacewith');
+                $lines = explode("\n", $userInput);
+                $searchPattern = '/(?i)' . implode('|', array_map('preg_quote', $lines)) . '/';
+                $newHTML = preg_replace($searchPattern, $replaceWith, $newHTML);
+            }
+
             // show alert
             if ($s_post != -1) {
                 $args = [
