@@ -43,20 +43,45 @@ flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().initializers.add('jslir
   }).registerSetting({
     setting: 'jslirola.login2seeplus.link',
     type: 'switch',
-    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.link')
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.link.title')
   }).registerSetting({
     setting: 'jslirola.login2seeplus.image',
     type: 'switch',
-    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.image')
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.image.title')
   }).registerSetting({
     setting: 'jslirola.login2seeplus.code',
     type: 'switch',
-    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.code')
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.code.title')
   }).registerSetting({
     setting: 'jslirola.login2seeplus.sensitive.switch',
     type: 'switch',
-    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.switch')
-  });
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.title')
+  }).registerPermission({
+    icon: 'fas fa-eye',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.post.permission.nohide.label'),
+    permission: 'jslirola-login2seeplus.post.nohide',
+    allowGuest: true
+  }, 'view').registerPermission({
+    icon: 'fas fa-eye',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.link.permission.nohide.label'),
+    permission: 'jslirola-login2seeplus.link.nohide',
+    allowGuest: true
+  }, 'view').registerPermission({
+    icon: 'fas fa-eye',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.image.permission.nohide.label'),
+    permission: 'jslirola-login2seeplus.image.nohide',
+    allowGuest: true
+  }, 'view').registerPermission({
+    icon: 'fas fa-eye',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.code.permission.nohide.label'),
+    permission: 'jslirola-login2seeplus.code.nohide',
+    allowGuest: true
+  }, 'view').registerPermission({
+    icon: 'fas fa-eye',
+    label: flarum_common_app__WEBPACK_IMPORTED_MODULE_1___default().translator.trans('jslirola-login2seeplus.admin.sensitive.permission.nohide.label'),
+    permission: 'jslirola-login2seeplus.sensitive.nohide',
+    allowGuest: true
+  }, 'view');
 });
 function createSeparator() {
   return m("div", {
