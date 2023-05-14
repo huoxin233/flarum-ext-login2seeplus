@@ -16,10 +16,12 @@ namespace JSLirola\Login2SeePlus;
 use Flarum\Api\Serializer\BasicPostSerializer;
 use Flarum\Api\Serializer\ForumSerializer;
 use Flarum\Api\Serializer\PostSerializer;
+use Flarum\Api\Serializer\DiscussionSerializer;
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
 use JSLirola\Login2SeePlus\HideContentInPosts;
 use JSLirola\Login2SeePlus\HideContentInPostPreviews;
+use JSLirola\Login2SeePlus\HideTitleInDiscussions;
 
 return [
     (new Extend\Frontend('forum'))
@@ -44,5 +46,8 @@ return [
 
     (new Extend\ApiSerializer(BasicPostSerializer::class))
         ->attributes(HideContentInPostPreviews::class),
+
+    (new Extend\ApiSerializer(DiscussionSerializer::class))
+    ->attributes(HideTitleInDiscussions::class),
 
 ];

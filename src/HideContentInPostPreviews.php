@@ -21,14 +21,26 @@ class HideContentInPostPreviews extends FormatContent
 
             $newHTML = $attributes["contentHtml"];
 
-            if (!$serializer->getActor()->isGuest() && $serializer->getActor()->is_email_confirmed === 1)
-                return $attributes;
+            /*if (!$serializer->getActor()->isGuest() && $serializer->getActor()->is_email_confirmed === 1)
+                return $attributes;*/
 
             $s_summary_links = $this->settings->get('jslirola.login2seeplus.link', false);
+            $s_sensitive = $this->settings->get('jslirola.login2seeplus.sensitive.switch', false);
 
-            if (!is_null($newHTML) && $s_summary_links == 1)
+            $can_noHideLinks = $serializer->getActor()->can('jslirola-login2seeplus.link.nohide');
+            $can_noHideSensitive = $serializer->getActor()->can('jslirola-login2seeplus.sensitive.nohide');
+
+            if (!is_null($newHTML) && $s_summary_links  && !$can_noHideLinks)
                 $newHTML = preg_replace('/(<a((?!PostMention).)*?>)[^<]*<\/a>/is',
                     '[' . $this->get_link('jslirola-login2seeplus.forum.link') . ']', $newHTML);
+            
+            if (!is_null($newHTML) && $s_sensitive && !$can_noHideSensitive) {
+                $userInput = $this->settings->get('jslirola.login2seeplus.sensitive.input');
+                $replaceWith = $this->settings->get('jslirola.login2seeplus.sensitive.replacewith');
+                $lines = explode("\n", $userInput);
+                $searchPattern = '/(?i)' . implode('|', array_map('preg_quote', $lines)) . '/';
+                $newHTML = preg_replace($searchPattern, $replaceWith, $newHTML);
+            }
 
             $attributes['contentHtml'] = $newHTML;
 
