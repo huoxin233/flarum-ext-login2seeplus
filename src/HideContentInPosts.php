@@ -62,7 +62,7 @@ class HideContentInPosts extends FormatContent
                 $userInput = $this->settings->get('jslirola.login2seeplus.sensitive.input');
                 $replaceWith = $this->settings->get('jslirola.login2seeplus.sensitive.replacewith');
                 $lines = explode("\n", $userInput);
-                $searchPattern = '/(?i)(?<!<)\b(?:' . implode('|', array_map('preg_quote', $lines)) . ')\b/';
+                $searchPattern = '/(?i)' . implode('|', array_map('preg_quote', $lines)) . '/';
                 $newHTML = preg_replace($searchPattern, $replaceWith, $newHTML);
             }
 
